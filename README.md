@@ -1,6 +1,6 @@
 # YouTube Thumbnail Downloader
 
-![Tests](https://github.com/plutskiy/testTask/workflows/Tests/badge.svg)
+![Tests](https://github.com/plutskiy/youtubeThumbnails/workflows/Tests/badge.svg)
 
 This project provides a gRPC service for downloading YouTube video thumbnails based on video URLs. The server fetches thumbnails from YouTube, caches them in memory, and stores them in a local SQLite database.
 
