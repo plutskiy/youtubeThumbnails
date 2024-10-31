@@ -55,6 +55,8 @@ func (s *server) GetThumbnail(ctx context.Context, req *pb.ThumbnailRequest) (*p
 
 func (s *server) getThumbnailFromDB(ulr string) ([]byte, error) {
 	var thumbnail []byte
+	s.dbLock.Lock()
+	defer s.dbLock.Unlock()
 	err := s.db.QueryRow("SELECT thumbnail FROM thumbnails WHERE url = $1", ulr).Scan(&thumbnail)
 	if err != nil {
 		return nil, err
